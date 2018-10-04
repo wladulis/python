@@ -1,3 +1,3 @@
 
 # python
-# my python repository
+# my python repository for training
