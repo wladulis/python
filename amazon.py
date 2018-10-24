@@ -18,7 +18,7 @@ class amazon(unittest.TestCase):
     def test_amazon(self):
         success = True
         wd = self.wd
-        wd.get("https://www.amazon.com/ref=nav_logo")
+        self.login(wd)
         wd.find_element_by_xpath("//div[@id='_1jVj4MlPpgwTlJrcHO8kg']/div[2]/a/div/img").click()
         wd.find_element_by_link_text("Technical details").click()
         wd.find_element_by_link_text("Sell on Amazon").click()
@@ -28,7 +28,10 @@ class amazon(unittest.TestCase):
         wd.back()
         wd.find_element_by_link_text("Fire Tablets").click()
         self.assertTrue(success)
-    
+
+    def login(self, wd):
+        wd.get("https://www.amazon.com/ref=nav_logo")
+
     def tearDown(self):
         self.wd.quit()
 
